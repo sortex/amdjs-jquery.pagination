@@ -7,9 +7,16 @@
  * @version 2.2
  * @param {int} maxentries Number of entries to paginate
  * @param {Object} opts Several options (see README for documentation)
- * @return {Object} jQuery Object
  */
- (function($){
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define(['jquery'], factory);
+	} else {
+		// Browser globals
+		factory(jQuery);
+	}
+}(function ($) {
 	/**
 	 * @class Class for calculating pagination values
 	 */
@@ -236,4 +243,4 @@
 		}
 	} // End of $.fn.pagination block
 	
-})(jQuery);
+}));
